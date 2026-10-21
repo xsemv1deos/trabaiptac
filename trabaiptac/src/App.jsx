@@ -9,7 +9,11 @@ export default function App() {
     e.preventDefault();
     if (texto.trim() === "") return;
 
-    const nova = { id: Date.now(), texto: texto, feita: false };
+    const nova = { 
+      id: Date.now(), 
+      texto: texto, 
+      feita: false };
+      
     setIdeias([...ideias, nova]);
     setTexto("");
   }
