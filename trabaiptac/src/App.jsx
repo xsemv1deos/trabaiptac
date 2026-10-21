@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "./App.css"
 
 export default function App() {
   const [ideias, setIdeias] = useState([]);
@@ -26,15 +27,18 @@ export default function App() {
     <div>
       <h1>Painel de Ideias</h1>
 
+      <div className = "Painel">
       <form onSubmit={adicionarIdeia}>
         <input
           type="text"
-          placeholder="Nova ideia..."
+          placeholder="Nova ideia"
           value={texto}
           onChange={(e) => setTexto(e.target.value)}
         />
         <button type="submit">Adicionar</button>
       </form>
+
+      <div className= "lista">
 
       <ul>
         {ideias.map((i) => (
@@ -52,7 +56,12 @@ export default function App() {
         ))}
       </ul>
 
+      </div>
+
       <p>{`${total} ideias no painel · ${concluidas} concluídas`}</p>
+      
+      </div>
+
     </div>
   );
 }
